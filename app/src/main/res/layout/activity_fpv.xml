@@ -1,0 +1,108 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextureView
+        android:id="@+id/video_previewer_surface"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/linearLayout" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_above="@+id/footer"
+        android:id="@+id/linearLayout">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <FrameLayout
+            android:id="@+id/photo_action_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/btn_capture"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center_vertical"
+            android:background="@mipmap/capture"
+            android:backgroundTint="@android:color/holo_red_light"
+            android:textSize="12sp" />
+
+        <ToggleButton
+            android:id="@+id/btn_record"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/check"
+            android:backgroundTint="@android:color/holo_red_light"
+            android:textOff=" "
+            android:textOn=" "
+            android:textSize="12dp" />
+
+        <Button
+            android:id="@+id/btn_shoot_photo_mode"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center_vertical"
+            android:background="@mipmap/photo_mode"
+            android:backgroundTint="@android:color/holo_red_light"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btn_record_video_mode"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center_vertical"
+            android:background="@mipmap/video_mode"
+            android:backgroundTint="@android:color/holo_red_light" />
+
+        <Button
+            android:id="@+id/btn_map"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center_vertical"
+            android:background="@mipmap/map"
+            android:backgroundTint="@android:color/holo_red_light"
+            android:padding="2dp" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/footer">
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="150dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="23dp"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:layout_alignTop="@+id/video_previewer_surface"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

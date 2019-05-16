@@ -1,0 +1,15 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="160dp"
+    android:layout_height="90dp"
+    android:background="@color/blue_sea"
+    android:layout_gravity="top"
+    tools:context="tradr.app.activities.map.FPVFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextureView
+        android:id="@+id/video_previewer_surface"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</FrameLayout>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:clickable="true"
+    tools:context=".activities.main.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/view_tra"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="24dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/tra"
+                    android:scaleType="center" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_connection_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/text_model_available"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="30dp"
+                android:gravity="center"
+                android:text="Status: No Product Connected"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text_product_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="@string/product_information"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text_model_available"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/btn_open"
+                android:layout_alignParentStart="true"
+                android:gravity="center"
+                android:text="@string/model_not_available"
+                android:textColor="@color/gray"
+                android:textSize="15dp"
+                android:layout_marginBottom="30dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginBottom="30dp">
+
+                <TextView
+                    android:id="@+id/lbl_ipAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IP Address of TRADR-Core:" />
+
+                <EditText
+                    android:id="@+id/txt_ipAddress"
+                    android:layout_width="164dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="172.16.35.138"
+                    android:inputType="text"
+                    android:text="192.168.7.111" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <!--
+                <Button
+                    android:id="@+id/btn_debug"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:background="@mipmap/debug"
+                    android:backgroundTint="@color/tradr"
+                    android:clickable="true"
+                    android:contextClickable="true"
+                    android:textSize="20dp"
+                    android:visibility="invisible" />
+                -->
+
+                <Button
+                    android:id="@+id/btn_open"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:background="@mipmap/connect"
+                    android:backgroundTint="@color/tradr"
+                    android:clickable="true"
+                    android:contextClickable="true"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_sdk_version"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:text="@string/sdk_version"
+                android:textAlignment="center"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

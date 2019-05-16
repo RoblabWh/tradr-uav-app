@@ -1,0 +1,146 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="135dp"
+    android:layout_height="match_parent"
+    android:background="@color/gray_transparent"
+    tools:context="tradr.app.activities.map.TaskWizFragment_Circle">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_red_dark"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:padding="10px"
+                    android:text="TASK TYPES"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="10px"
+                    android:layout_marginRight="10px"
+                    android:background="@mipmap/delete"
+                    android:backgroundTint="@color/white" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20px" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10px"
+                android:layout_marginRight="10px"
+                android:text="Hotpoint Task"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_circle"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20px"
+                android:layout_marginRight="10px"
+                android:background="@mipmap/hotpoint"
+                android:backgroundTint="@android:color/holo_red_light" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40px" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10px"
+                android:layout_marginRight="10px"
+                android:text="Area Task"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_area"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20px"
+                android:layout_marginRight="10px"
+                android:background="@mipmap/meander"
+                android:backgroundTint="@android:color/holo_red_light" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40px" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10px"
+                android:layout_marginRight="10px"
+                android:text="Custom Task"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_free"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20px"
+                android:layout_marginRight="10px"
+                android:background="@mipmap/rect"
+                android:backgroundTint="@android:color/holo_red_light" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40px" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10px"
+                android:layout_marginRight="10px"
+                android:text="Configuration"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btn_config"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20px"
+                android:layout_marginRight="10px"
+                android:background="@mipmap/config"
+                android:backgroundTint="@android:color/holo_red_light" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

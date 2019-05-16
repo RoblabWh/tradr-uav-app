@@ -1,0 +1,65 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="135dp"
+    android:layout_height="match_parent"
+    android:background="@color/gray_transparent"
+    tools:context="tradr.app.activities.map.TaskUploadFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_red_dark"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10px"
+                android:layout_marginRight="10px"
+                android:text="TASK UPLOAD"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="0px"
+                android:background="@mipmap/delete"
+                android:backgroundTint="@color/white" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20px" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10px"
+            android:layout_marginRight="10px"
+            android:text="Click on the button to upload the task to aircraft"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_upload"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20px"
+            android:layout_marginRight="10px"
+            android:background="@mipmap/upload"
+            android:backgroundTint="@android:color/holo_red_light" />
+    </LinearLayout>
+
+</FrameLayout>
