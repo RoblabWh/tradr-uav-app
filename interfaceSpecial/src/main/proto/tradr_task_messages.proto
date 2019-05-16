@@ -1,0 +1,41 @@
+/**
+* Frist draft of communication between TRADR-System and third party UAV's.
+*
+* Version: 0.1.1
+*/
+
+syntax = "proto3";
+package tradr.uav.api.special;
+
+option java_multiple_files = true;
+option java_package = "tradr.uav.api.special";
+
+import "tradr_camera_messages.proto";
+import "tradr_common_messages.proto";
+
+message MissionMsg {
+    uint32 missionID = 1;
+    repeated TaskWaypointMsg taskWaypoint = 2;
+    bool startImmediately = 3;
+}
+
+message TaskWaypointMsg {
+    uint32 taskID = 1;
+    PoseMsg uavPose = 2;
+    repeated ImageTaskMsg imageTask = 3;
+    float velocity = 4;
+}
+
+message ImageTaskMsg {
+    CameraSettingsMsg camSettings = 1;
+    PoseMsg camPose = 2;
+}
+
+message MissionRespMsg {
+    bool missionACK = 1;
+}
+
+message MissionStatusMsg {
+    uint32 currentMissionID = 1;
+    uint32 currentWaypointID = 2;
+}

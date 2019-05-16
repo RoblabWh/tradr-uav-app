@@ -1,0 +1,101 @@
+/**
+* Frist draft of communication between TRADR-System and third party UAV's.
+*
+* Version: 0.1.1
+*/
+
+syntax = "proto3";
+package tradr.uav.api.special;
+
+option java_multiple_files = true;
+option java_package = "tradr.uav.api.special";
+
+import "tradr_common_messages.proto";
+
+enum CameraISO {
+    AUTO = 0;
+    ISO_25 = 1;
+    ISO_50 = 2;
+    ISO_100 = 3;
+    ISO_200 = 4;
+    ISO_400 = 5;
+    ISO_800 = 6;
+    ISO_1600 = 7;
+    ISO_3200 = 8;
+    ISO_6400 = 9;
+    ISO_12800 = 10;
+    ISO_25600 = 11;
+}
+
+enum CameraOutput {
+    CAMERA_STILL = 0;
+    CAMERA_VIDEO = 1;
+}
+
+message CameraCapabilitiesMsg {
+
+    repeated OutputFormatMsg outputFormats = 1;
+
+    /* Roll */
+    bool rollCapability = 2;
+    float rollLimitMax = 3;
+    float rollLimitMin = 4;
+
+    /* Pitch */
+    bool pitchCapability = 5;
+    float pitchLimitMax = 6;
+    float pitchLimitMin = 7;
+    
+    /* Yaw */
+    bool yawCapability = 8;
+    float yawLimitMax = 9;
+    float yawLimitMin = 10;
+}
+
+message CameraSettingsMsg {
+    string aperture = 1;
+    string shutterSpeed = 2;
+    CameraISO iso = 3;
+    string ratio = 4;
+    OutputFormatMsg outputFormatSetting = 5;
+}
+
+message OutputFormatMsg {
+    ResolutionMsg resolution = 1;
+    uint32 fps = 2;
+    CameraOutput cameraOutput = 3;
+}
+
+message ResolutionMsg {
+    uint32 width = 1;
+    uint32 height = 2;
+}
+
+message VideostreamReqMsg {
+    bool enable = 1;
+    OutputFormatMsg outputFormat = 2;
+    string recipientAddress = 3;
+    string recipientPort = 4;
+}
+
+message VideostreamAckMsg {
+    bool videoStarted = 1;
+    OutputFormatMsg outputFormat = 2;
+}
+
+message VideostreamDataMsg {    
+    bytes data = 1;
+    uint32 size = 2;    
+    PoseMsg assetPose = 3; //really needed?
+    PoseMsg cameraPose = 4; 
+}
+
+
+message StillimageDataMsg {
+    bytes data = 1;
+    uint32 size = 2;
+    
+    CameraSettingsMsg camSettings = 3;
+    PoseMsg assetPose = 4; //really needed?
+    PoseMsg cameraPose = 5; 
+}

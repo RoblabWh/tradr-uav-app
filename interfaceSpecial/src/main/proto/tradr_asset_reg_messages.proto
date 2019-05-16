@@ -1,0 +1,25 @@
+/**
+* Frist draft of communication between TRADR-System and third party UAV's.
+*
+* Version: 0.1.1
+*/
+syntax = "proto3";
+package tradr.uav.api.special;
+
+option java_multiple_files = true;
+option java_package = "tradr.uav.api.special";
+
+import "tradr_camera_messages.proto";
+
+message AssetRegReqMsg {
+    string assetName = 1;
+    string assetModel = 2;
+    string apiVersion = 3; // API Version FORMAT: x.x.x 0.1.0
+    string assetGUID = 4;
+
+    CameraCapabilitiesMsg cameraCapabilities = 5;
+}
+
+message AssetRegACKMsg {
+    uint32 assetID = 1;
+}

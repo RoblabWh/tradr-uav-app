@@ -1,0 +1,52 @@
+/**
+* Frist draft of communication between TRADR-System and third party UAV's.
+*
+* Version: 0.1.1
+*/
+
+syntax = "proto3";
+package tradr.uav.api.special;
+
+option java_multiple_files = true;
+option java_package = "tradr.uav.api.special";
+
+import "tradr_common_messages.proto";
+import "tradr_task_messages.proto";
+
+message AssetStatusMsg {
+    int32 timestamp = 1; /// UNIX epoch time
+    repeated AssetInformationMsg assetInformation = 2;
+}
+
+message AssetInformationMsg {
+
+    enum AssetType {
+        UAV = 0;
+        UGV = 1;
+    }
+    uint32 assetID = 1;
+    string assetName = 2;
+    string assetModel = 3;
+    AssetType assetType = 4;
+    float batteryStatus = 5;
+    AssetVelocityMsg assetVelocity = 6;
+    PoseMsg assetPose = 7;
+    float assetHeight = 8; /// m  [0.0; 100.0] distance between ground and aircraft at current location NaN: unknown
+    MissionStatusMsg missionStatus = 9;
+    
+}
+
+message AssetVelocityMsg {
+    /// m/s [-100.0; 100.0] Positive: forward movement negative: backward movement NaN: unknown
+    float velX = 1;
+    /// m/s [-100.0; 100.0] Positive: right movement negative: left movement NaN: unknown
+    float velY = 2;
+    /// m/s [-100.0; 100.0] Positive: down movement negative: up movement NaN: unknown
+    float velZ = 3;
+    /// Degree/s [-2160.0; +2160.0] Positive: clockwise rotation negative: counter clockwise rotation NaN: unknown
+    float velRoll = 4;
+    /// Degree/s [-2160.0; +2160.0] Positive: clockwise rotation negative: counter cloackwise rotation NaN: unknown
+    float velPitch = 5;
+    /// Degree/s [-2160.0; +2160.0] Positive: clockwise rotation negative: counter clockwise rotation NaN: unknown
+    float velYaw = 6;
+}
